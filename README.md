@@ -9,4 +9,7 @@ The procedure for conversion was pretty interesting:
   3. Made them in pytorch and transfer raw weights from tflite file semi-manually into pytorch model definition. (see Convert-FaceMesh.ipynb for details)
 
 
-* Input for the model is expected to be cropped face with 25% margin at every side, resized to 192x192 and normalized from -1 to 1
+#### Input for the model is expected to be cropped face with 25% margin at every side, resized to 192x192 and normalized from -1 to 1
+However, `predict_on_image` function normalizes your image itself, so you can even treat resized image as np.array as input
+
+See Inference-FaceMesh.ipynb notebook for usage example 
